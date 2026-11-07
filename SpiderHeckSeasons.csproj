@@ -1,0 +1,42 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!--
+    Build against the shared Silk assemblies from Silk\Library (copied into lib\),
+    not NuGet packages. No ILRepack: the output DLL must contain ONLY this mod's types,
+    or Silk's `is SilkMod` check and the shared 0Harmony.dll break.
+    Same pattern as SpiderHeckPalette and SpiderHeckJukebox.
+  -->
+
+  <PropertyGroup>
+    <Title>SpiderHeck Seasons</Title>
+    <Version>0.1.0</Version>
+    <AssemblyVersion>$(Version)</AssemblyVersion>
+    <FileVersion>$(Version)</FileVersion>
+    <Authors>AeonS</Authors>
+    <Product>SpiderHeck Seasons</Product>
+    <OutputType>library</OutputType>
+    <TargetFramework>net472</TargetFramework>
+    <LangVersion>10.0</LangVersion>
+    <AssemblyName>SpiderHeckSeasons</AssemblyName>
+    <RootNamespace>Seasons</RootNamespace>
+    <Description>SpiderHeck Seasons: choose the game's seasonal theme (Halloween, Christmas, none, or the game's own dates) any day of the year. For Silk 0.7.0.</Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="Silk"><HintPath>./lib/Silk.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="0Harmony"><HintPath>./lib/0Harmony.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="YamlDotNet"><HintPath>./lib/YamlDotNet.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="NewAssembly"><HintPath>./lib/NewAssembly.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="MyScriptAssembly"><HintPath>./lib/MyScriptAssembly.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.CoreModule"><HintPath>./lib/UnityEngine.CoreModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.AudioModule"><HintPath>./lib/UnityEngine.AudioModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.UI"><HintPath>./lib/UnityEngine.UI.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="Unity.TextMeshPro"><HintPath>./lib/Unity.TextMeshPro.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="Unity.Netcode.Runtime"><HintPath>./lib/Unity.Netcode.Runtime.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="Unity.Collections"><HintPath>./lib/Unity.Collections.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="Unity.Mathematics"><HintPath>./lib/Unity.Mathematics.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="DoozyEngine"><HintPath>./lib/DoozyEngine.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="I2"><HintPath>./lib/I2.dll</HintPath><Private>false</Private></Reference>
+  </ItemGroup>
+
+</Project>
